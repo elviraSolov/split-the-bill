@@ -1,0 +1,36 @@
+.btn {
+    font-size: inherit;
+    font-weight: 700;
+    border: 1px solid #7c7c7c;
+    position: relative;
+    color: #ffdb58;
+    text-decoration: none;
+    border-radius: 30px;
+    padding: 8px 20px;
+    cursor: pointer;
+
+    &--primary {
+       background-color: #5f5f5f; 
+    }
+
+    &--secondary {
+        background-color: transparent;
+    }
+
+    &--with-border {
+        border-color: transparent;
+
+        &::before {
+            position: absolute;
+            z-index: -1;
+            content: '';
+            left: -15%;
+            top: -10%;
+            width: 120%;
+            height: 120%;
+            border: 1px solid #4f4f4f;
+            border-radius: 30px;
+            background-color: #414141;
+        }
+    }
+}
