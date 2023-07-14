@@ -1,8 +1,9 @@
 <script setup>
     import { RouterLink } from 'vue-router'
     import { useBillStore } from '../store/bill'
+    import { UserOutlined, DeleteOutlined, UserAddOutlined } from '@ant-design/icons-vue'
 
-    const { people, addPerson } = useBillStore()
+    const { people, addPerson, deletePerson } = useBillStore()
 </script> 
 
 <template>  
@@ -12,28 +13,34 @@
                 type="button"
                 @click="addPerson()"
             >
+                <user-add-outlined />
                 Добавить человека
             </button>
         </div>
-        
         <div class="wrapper__body">
-            <div v-if="people.length == 0">
-                <p>Пока что пусто</p>
-                <p>Добавим кого-нибудь!</p>
-            </div>
-            <ul v-else class="people-list list">
+            <p class="list list--empty" v-if="people.length == 0">
+                Пока что пусто... <br>Добавим кого-нибудь!
+            </p>
+            <ul v-else class="list list--with-items">
                 <li v-for="(person, index) in people" :key="index"
-                    class="list__item people-list__item person"
+                    class="list__item person"
                 >
+                    <a-avatar class="person__avatar" size="large">
+                        <template #icon><UserOutlined /></template>
+                    </a-avatar>
                     <input class='person__name field' type="text" v-model="person.name">
+                    <button class="person__delete-btn btn"
+                        @click="deletePerson(index)"
+                    >
+                        <delete-outlined class="person__delete-btn-icon"/>
+                    </button>
                 </li>
             </ul>
         </div>
-
     </div>
 
-    <div class="wrapper">
-        <router-link to="/bills" class="wrapper__btn-next btn btn--primary">
+    <div class="wrapper wrapper--small">
+        <router-link to="/bills" class="wrapper__btn btn btn--primary">
             Дальше!
         </router-link>
     </div>

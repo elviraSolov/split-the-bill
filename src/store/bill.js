@@ -4,31 +4,31 @@ export const useBillStore = defineStore('bill', {
     state: () => ({
         whoPaid: 'Ann',
         products: [
-            {
-                name: 'pizza',
-                price: 300,
-                whoAte: ['Ann']
-            },
-            {
-                name: 'pasta',
-                price: 500,
-                whoAte: ['Tom']
-            },
-            {
-                name: 'tea',
-                price: 1000,
-                whoAte: ['Tom', 'Ann']
-            }
+            // {
+            //     name: 'pizza',
+            //     price: 300,
+            //     whoAte: ['Ann']
+            // },
+            // {
+            //     name: 'pasta',
+            //     price: 500,
+            //     whoAte: ['Tom']
+            // },
+            // {
+            //     name: 'tea',
+            //     price: 1000,
+            //     whoAte: ['Tom', 'Ann']
+            // }
         ],
         people: [
-            {
-                name: 'Ann',
-                debt: 0
-            },
-            {
-                name: 'Tom',
-                debt: 0
-            } 
+            // {
+            //     name: 'Ann',
+            //     debt: 0
+            // },
+            // {
+            //     name: 'Tom',
+            //     debt: 0
+            // } 
         ]
     }),
     getters: {
@@ -69,6 +69,9 @@ export const useBillStore = defineStore('bill', {
         addPerson() {
             const person = { name: null, debt: 0 }
             this.people.push(person)
+        },
+        deletePerson(index) {
+            this.people.splice(index, 1);
         }
     },
 })

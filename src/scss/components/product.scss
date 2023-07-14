@@ -1,0 +1,40 @@
+.product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 40px;
+    grid-template-areas: 'name price btn'
+        'details details details';
+    grid-column-gap: 5px;
+}
+
+.product__name {
+    grid-area: name;
+}
+
+.product__price {
+    grid-area: price;
+}
+
+.product__details-btn {
+    grid-area: btn;
+}
+
+.product__details {
+    grid-area: details;
+}
+
+.product__details-btn {
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+}
+
+.product__details-btn-icon--active {
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+
+.product__details-btn-icon--inactive {
+    transform: rotate(0);
+    transition: transform 0.5s ease;
+}

@@ -1,0 +1,62 @@
+// .control {
+//     position: relative;
+//     display: flex;
+//     align-items: center;
+//     cursor: pointer;
+
+//     &:hover .control__mark {
+//         background-color: #e5e5e5;
+//     }
+
+//     &:active .control__mark {
+//         background-color: #d5d5d5;
+    
+//         &::before {
+//           opacity: 0.3;
+//         }
+//     }
+// }
+
+// .control__input {
+//     display: none;
+// }
+
+// .control__mark {
+
+//     display: block;
+//     width: 25px;
+//     height: 25px;
+//     background-color: #5f5f5f;
+    
+//     &--bill {
+//         border-radius: 50%;
+//     }
+// }
+
+// .control__input[type="radio"]:checked + .control__mark::before {
+//     position: absolute;
+//     content: "";
+//     top: 15px;
+//     left: 15px;
+//     width: 16px;
+//     height: 16px;
+//     background-color: #333333;
+//     border-radius: 50%;
+//     z-index: 10;
+//   }
+  
+//   .control__input[type="checkbox"]:checked + .control__mark::before {
+//     position: absolute;
+//     content: "";
+//     top: 15px;
+//     left: 12px;
+//     width: 22px;
+//     height: 16px;
+//     // background-image: url("../../img/tick.svg");
+//     background-repeat: no-repeat;
+//   }
+  
+//   .control__input:disabled + .control__mark,
+//   .control__input:disabled ~ .control__label {
+//     opacity: 0.3;
+//   }
