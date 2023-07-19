@@ -1,62 +1,99 @@
-// .control {
-//     position: relative;
-//     display: flex;
-//     align-items: center;
-//     cursor: pointer;
+@use '../global/bootstrap.scss';
 
-//     &:hover .control__mark {
-//         background-color: #e5e5e5;
-//     }
+.control {
+    cursor: pointer;
 
-//     &:active .control__mark {
-//         background-color: #d5d5d5;
-    
-//         &::before {
-//           opacity: 0.3;
-//         }
-//     }
-// }
+    &--payer {
+        display: flex;
+        align-items: center;
+        padding: 10px;
 
-// .control__input {
-//     display: none;
-// }
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    }
+}
 
-// .control__mark {
+.control__input {
+    display: none;
+}
 
-//     display: block;
-//     width: 25px;
-//     height: 25px;
-//     background-color: #5f5f5f;
-    
-//     &--bill {
-//         border-radius: 50%;
-//     }
-// }
+.control__mark {
+    &--person {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: bootstrap.$accent-bg-color; 
+        margin-right: 5px;
+        height: 75px;
+        padding: 5px 8px;
+        border-radius: 10px;
+    }
 
-// .control__input[type="radio"]:checked + .control__mark::before {
-//     position: absolute;
-//     content: "";
-//     top: 15px;
-//     left: 15px;
-//     width: 16px;
-//     height: 16px;
-//     background-color: #333333;
-//     border-radius: 50%;
-//     z-index: 10;
-//   }
-  
-//   .control__input[type="checkbox"]:checked + .control__mark::before {
-//     position: absolute;
-//     content: "";
-//     top: 15px;
-//     left: 12px;
-//     width: 22px;
-//     height: 16px;
-//     // background-image: url("../../img/tick.svg");
-//     background-repeat: no-repeat;
-//   }
-  
-//   .control__input:disabled + .control__mark,
-//   .control__input:disabled ~ .control__label {
-//     opacity: 0.3;
-//   }
+    &--payer {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        border: 2px solid bootstrap.$primary-bg-color;
+        border-radius: 50%;
+        margin-left: auto;
+    }
+}
+
+.control__label {
+    &--person {
+        font-size: 14px;
+    }
+}
+
+.control__avatar {
+    &--person {
+        border: none;
+        position: relative;
+        margin-bottom: 5px;
+        color: bootstrap.$accent-text-color;
+    }
+
+    &--payer {
+        margin-right: 15px;
+    }
+}
+
+.control__input--person:checked + .control__mark--person {
+    .control__avatar::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: inherit;
+        background-color: bootstrap.$accent-text-color;
+    }
+
+    .control__avatar::after {
+        content: "";
+        position: absolute;
+        top: 8px;
+        left: 18px;
+        width: 15px;
+        height: 25px;
+        border-right: 3px solid bootstrap.$primary-text-color;
+        border-bottom: 3px solid bootstrap.$primary-text-color;
+        transform: rotate(45deg);
+    }
+}
+
+.control__input--payer:checked + .control__mark--payer {
+    &::after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        background-color: bootstrap.$accent-text-color;
+        border-radius: 50%;
+    }
+}

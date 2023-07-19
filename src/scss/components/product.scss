@@ -1,9 +1,12 @@
+@use '../global/bootstrap.scss';
+
 .product {
     display: grid;
     grid-template-columns: 1fr 1fr 40px;
     grid-template-areas: 'name price btn'
         'details details details';
     grid-column-gap: 5px;
+    grid-row-gap: 5px;
 }
 
 .product__name {
@@ -20,6 +23,18 @@
 
 .product__details {
     grid-area: details;
+    background-color: bootstrap.$primary-bg-color;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.product__people-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product__person {
+    margin-bottom: 5px;
 }
 
 .product__details-btn {

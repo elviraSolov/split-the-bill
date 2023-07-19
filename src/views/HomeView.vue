@@ -4,7 +4,7 @@
 
 <template>
     <div class="wrapper wrapper--small">
-        <h1 class="title">Делим счёт</h1>
+        <h1 class="title title--main">Делим счёт</h1>
         <p class="subtitle">Делить счёт - просто!</p>
     </div>
     <div class="wrapper wrapper--small">

@@ -1,11 +1,14 @@
-.list--empty {
-    text-align: center;
-}
+@use '../global/bootstrap.scss';
 
-.list--with-items {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.list {
+    &--empty {
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    &--with-items {
+        @include bootstrap.list-reset;
+    }
 }
 
 .list__item {

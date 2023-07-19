@@ -2,34 +2,9 @@ import { defineStore } from 'pinia'
 
 export const useBillStore = defineStore('bill', {
     state: () => ({
-        whoPaid: 'Ann',
-        products: [
-            // {
-            //     name: 'pizza',
-            //     price: 300,
-            //     whoAte: ['Ann']
-            // },
-            // {
-            //     name: 'pasta',
-            //     price: 500,
-            //     whoAte: ['Tom']
-            // },
-            // {
-            //     name: 'tea',
-            //     price: 1000,
-            //     whoAte: ['Tom', 'Ann']
-            // }
-        ],
-        people: [
-            // {
-            //     name: 'Ann',
-            //     debt: 0
-            // },
-            // {
-            //     name: 'Tom',
-            //     debt: 0
-            // } 
-        ]
+        people: [],
+        payer: '',
+        products: []
     }),
     getters: {
         getTotalPrice() {
@@ -51,7 +26,7 @@ export const useBillStore = defineStore('bill', {
             for (let product of this.products) {
                 const pricePerPerson = product.price / product.whoAte.length
                 for (let personName of product.whoAte) {
-                    if (personName !== this.whoPaid) {
+                    if (personName !== this.payer) {
                         const person = this.people.find(p => p.name === personName)
                         person.debt += pricePerPerson
                     }   
@@ -66,12 +41,15 @@ export const useBillStore = defineStore('bill', {
             const product = { name: null, price: null, whoAte: [] }
             this.products.push(product)
         },
+        deleteProduct(index) {
+            this.products.splice(index, 1)
+        },
         addPerson() {
             const person = { name: null, debt: 0 }
             this.people.push(person)
         },
         deletePerson(index) {
-            this.people.splice(index, 1);
+            this.people.splice(index, 1)
         }
     },
 })

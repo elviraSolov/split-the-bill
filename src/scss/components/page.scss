@@ -1,11 +1,13 @@
+@use '../global/bootstrap.scss';
+
 .page__body {
+    position: relative;
     margin: 20px 0 0 0;
     display: flex;
-    font-display: column;
     justify-content: center;
     align-items: center;
-    background-color: #2b2b2b;
-    color: #ffffff;
+    background-color: bootstrap.$page-color;
+    color: bootstrap.$primary-text-color;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
 }

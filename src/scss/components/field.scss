@@ -1,10 +1,12 @@
+@use '../global/bootstrap.scss';
+
 .field {
     outline: none;
-    background-color: #5f5f5f;
+    background-color: bootstrap.$primary-bg-color;
     border: none;
     border-radius: 5px;
     padding: 6px 12px;
-    color: #ffffff;
+    color: bootstrap.$primary-text-color;
     font-size: 16px;
     line-height: 1.5;
 }

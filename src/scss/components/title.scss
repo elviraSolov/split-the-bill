@@ -1,7 +1,12 @@
+@use '../global/bootstrap.scss';
+
 .title {
-    color: #ffdb58;
-    font-size: 60px;
+    color: bootstrap.$accent-text-color;
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 10px;
+
+    &--main {
+        font-size: 55px;
+    }
 }

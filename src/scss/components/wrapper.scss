@@ -1,3 +1,5 @@
+@use '../global/bootstrap.scss';
+
 .wrapper {
     width: 650px;
     display: flex;
@@ -5,9 +7,9 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    border: 1px solid #4f4f4f;
+    border: 1px solid bootstrap.$wrapper-border-color;
     border-radius: 15px;
-    background-color: #414141;
+    background-color: bootstrap.$wrapper-color;
 
     &:not(:last-child) {
         margin-bottom: 15px;
@@ -28,7 +30,7 @@
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 15px 15px 0 0;
-    background-color: #5f5f5f;
+    background-color: bootstrap.$primary-bg-color;
 }
 
 .wrapper__body {
@@ -40,4 +42,8 @@
     display: flex;
     width: calc(100% - 30px);
     justify-content: center;
+
+    &--disabled {
+        pointer-events: none;
+    }
 }
