@@ -9,4 +9,8 @@
     color: bootstrap.$primary-text-color;
     font-size: 16px;
     line-height: 1.5;
+
+    &:focus-within {
+        outline: 2px solid rgba(255, 219, 88, 0.3);
+    }
 }

@@ -1,5 +1,7 @@
 .person {
     display: flex;
+    animation-name: drop;
+    animation-duration: 0.45s;
 }
 
 .person__avatar {

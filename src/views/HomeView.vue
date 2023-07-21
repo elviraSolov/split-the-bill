@@ -5,10 +5,10 @@
 <template>
     <div class="wrapper wrapper--small">
         <h1 class="title title--main">Делим счёт</h1>
-        <p class="subtitle">Делить счёт - просто!</p>
+        <p>Делить счёт - просто!</p>
     </div>
     <div class="wrapper wrapper--small">
-        <router-link to="/people" class="btn btn--primary">
+        <router-link to="/people" class="wrapper__btn btn btn--primary">
             Начать!
         </router-link>
     </div>

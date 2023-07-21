@@ -7,6 +7,8 @@
         'details details details';
     grid-column-gap: 5px;
     grid-row-gap: 5px;
+    animation-name: drop;
+    animation-duration: 0.45s;
 }
 
 .product__name {

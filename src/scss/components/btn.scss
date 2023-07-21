@@ -10,6 +10,7 @@
     border-radius: 30px;
     padding: 8px 20px;
     cursor: pointer;
+    transition: box-shadow 0.25s ease;
 
     &--primary {
        background-color: bootstrap.$primary-bg-color; 
@@ -17,6 +18,11 @@
 
     &--secondary {
         background-color: transparent;
+    }
+
+    &--primary:hover, 
+    &--secondary:hover {
+        box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
     }
 
     &--small {
