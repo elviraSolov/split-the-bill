@@ -1,7 +1,36 @@
-# Vue 3 + Vite
+# Делим счёт
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Приложение для деления чека/счёта на нескольких людей. 
 
-## Recommended IDE Setup
+## Обзор проекта
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+### Основные функции 
+* Добавление людей 
+* Добавление позиций с указанием пользователей, которые её ели/пили
+* Выбор плательщика
+* Проверка результата и рассчет долгов
+
+### Используемые технологии
+* [Vue 3](https://vuejs.org/) + [Vite](https://vitejs.dev/)
+* [VueRouter](https://router.vuejs.org/) - официальная библиотека маршрутизации Vue.js
+* [Pinia](https://pinia.vuejs.org/) - библиотека управления состояниями для Vue.js
+* [SASS](https://sass-lang.com/) - препроцессор CSS
+* [Ant Design Vue](https://antdv.com/components/overview) - библиотека UI-компонентов
+* [БЭМ](https://ru.bem.info/) - методология web-разработки
+
+### Сборка проекта
+Установка зависимостей:
+```
+npm install
+```
+Запуск Development-сервера:
+```
+npm run dev
+```
+
+### Описание экранов 
+`Экран добавления персон` - 
+
+`Экран добавления позиций из счёта` - 
+
+`Экран результатов` - 
