@@ -38,15 +38,16 @@
                         </button>
                         <h2 class="modal__title">Изменить плательщика</h2>
                         <p class="modal__subtitle">Кто платил за это?</p>
-                        <label class="control control--payer" v-for="(person, personIndex) in people" :key="personIndex">
+                        <label class="control control--payer" v-for="person in people" :key="person.id">
                             <a-avatar class="control__avatar control__avatar--payer" size="large">
                                 <template #icon><UserOutlined /></template>
                             </a-avatar>
                             <span class="control__label control__label--payer">{{ person.name }}</span>
-                            <input class="control__input control__input--payer"
+                            <input 
+                                class="control__input control__input--payer"
                                 type="radio"
                                 name="bill" 
-                                :id="`person-${personIndex}`" 
+                                :id="`person-${person.id}`" 
                                 :value="person.name"
                                 v-model="payer"
                             >
@@ -56,8 +57,12 @@
                 </div>
                 
                 <ul class="list list--with-items">
-                    <li class="list__item product" v-for="(product, index) in products" :key="index">
-                        <app-product-field :product="product" :index="index" :key="index"></app-product-field>
+                    <li 
+                        class="list__item product" 
+                        v-for="(product, index) in products" 
+                        :key="product.id"
+                    >
+                        <app-product-field :product="product" :index="index" />
                     </li>
                 </ul>
             </div>

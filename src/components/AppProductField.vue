@@ -1,5 +1,4 @@
 <script setup>
-    import { defineProps } from 'vue'
     import { useBillStore } from '../store/bill'
     import { storeToRefs } from 'pinia'
     import { CaretDownOutlined, UserOutlined, TeamOutlined, DeleteOutlined } from '@ant-design/icons-vue'
@@ -36,39 +35,43 @@
 
     const showDetails = (product) => {
         product.isDetailsVisible = !product.isDetailsVisible
-        console.log(product.isDetailsVisible)
     }
 </script>
   
 <template>
-    <input class='product__name field' 
+    <input 
+        class='product__name field' 
         placeholder="Название"
         type="text" 
         v-model="product.name"
     >
-    <input class='product__price field' 
+    <input 
+        class='product__price field' 
         placeholder="Цена"
         type="number" 
-        v-model="product.price"
+        v-model.number="product.price"
     >
 
-    <button class="product__details-btn btn" 
+    <button 
+        class="product__details-btn btn" 
         type="button" 
         @click="showDetails(product)"
     >
         <span class="visually-hidden">Подробнее о позиции</span>
-        <caret-down-outlined class="product__details-btn-icon"
+        <caret-down-outlined 
+            class="product__details-btn-icon"
             :class="product.isDetailsVisible ? 
                 'product__details-btn-icon--active' :
                 'product__details-btn-icon--inactive'"
         />
     </button>
 
-    <div v-show="product.isDetailsVisible == true" class="product__details">
+    <div v-show="product.isDetailsVisible" class="product__details">
         <div class="product__people-wrapper">
             <label class="product__person control" 
             >
-                <input class="control__input control__input--person" 
+                <input 
+                    class="control__input control__input--person" 
                     type="checkbox"
                     @change="handleCheckboxAllChange(product, $event.target.checked)"
                 >
@@ -82,16 +85,18 @@
                 </span>
             </label>
 
-            <label class="product__person control" 
-                v-for="(person) in people" 
+            <label 
+                class="product__person control" 
+                v-for="(person, index) in people" 
                 :key="person.id"
             >
-                <input class="control__input control__input--person"
+                <input 
+                    class="control__input control__input--person"
                     type="checkbox" 
                     :id="`person-${person.id}`" 
                     :name="`bill-${index}`"
-                    :value="person.name"
-                    :checked="product.whoAte.includes(person.name)"
+                    :value="person.id"
+                    :checked="product.whoAte.includes(person.id)"
                     @change="handleCheckboxChange(product, person.name, $event.target.checked)"
                 >
                 <span class="control__mark control__mark--person">
@@ -104,7 +109,8 @@
                 </span>
             </label>
         </div>
-        <button class="btn btn--small btn--danger" 
+        <button 
+            class="btn btn--small btn--danger" 
             type="button"
             @click="deleteProduct(index)"
         >

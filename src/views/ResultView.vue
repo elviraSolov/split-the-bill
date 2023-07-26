@@ -12,7 +12,12 @@
             <h1 class="title">Результаты</h1>
         </div>
         <div class="wrapper__body">
-            <app-debt v-for="person in getTotalPricePerPerson" v-show="person.name !== payer" :person="person"></app-debt>
+            <app-debt 
+                v-for="person in getTotalPricePerPerson" 
+                v-show="person.name !== payer" 
+                :person="person"
+                :key="person.id"
+            />
         </div>
     </div>
 

@@ -38,14 +38,14 @@ export const useBillStore = defineStore('bill', {
     },
     actions: {
         addProduct() {
-            const product = { name: null, price: null, whoAte: [] }
+            const product = { name: null, price: null, whoAte: [], id: Date.now() }
             this.products.push(product)
         },
         deleteProduct(index) {
             this.products.splice(index, 1)
         },
         addPerson() {
-            const person = { name: null, debt: 0 }
+            const person = { name: null, debt: 0, id: Date.now() }
             this.people.push(person)
         },
         deletePerson(index) {

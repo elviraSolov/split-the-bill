@@ -1,9 +1,7 @@
 <script setup>
     import { useBillStore } from '../store/bill'
-    import { defineProps } from 'vue'
 
     const { person } = defineProps(['person'])
-
     const { payer } = useBillStore()
 </script>
 

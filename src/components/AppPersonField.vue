@@ -1,5 +1,4 @@
 <script setup>
-    import { defineProps } from 'vue'
     import { useBillStore } from '../store/bill'
     import { UserOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 

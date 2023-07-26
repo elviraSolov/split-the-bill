@@ -8,13 +8,7 @@
     const { people, addPerson } = useBillStore()
 
     const isGoNextButtonDisabled = computed(() => {
-        if (people.length < 2) {
-            return true
-        } else if (people.length > 1 && people.some(person => person.name == undefined)) {
-            return true
-        } else {
-            return false
-        }
+        return (people.length < 2) || (people.length > 1 && people.some(person => person.name == undefined)) 
     })
 </script> 
 
@@ -32,7 +26,7 @@
             </p>
             <ul v-else class="list list--with-items">
                 <li class="list__item person" v-for="(person, index) in people" :key="person.id">
-                    <app-person-field :person="person" :index="index"></app-person-field>
+                    <app-person-field :person="person" :index="index" />
                 </li>
             </ul>
         </div>
