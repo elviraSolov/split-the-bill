@@ -8,15 +8,12 @@ export const useBillStore = defineStore('bill', {
     }),
     getters: {
         getTotalPrice() {
-            let total = 0
-            for (let product of this.products) {
-                // Проверка на пустую строку (иначе к началу суммы прибавляется 0)
-                const price = parseFloat(product.price)
-                if (!isNaN(price) && price!==null && price !=='') {
-                    total += price
-                }
-            }
-            return total 
+            return this.products.reduce((total, product) => {
+              if (!isNaN(product.price) && product.price !== null && product.price !== '') {
+                total += product.price
+              }
+              return total
+            }, 0)
         },
         getTotalPricePerPerson() {
             for (let person of this.people) {

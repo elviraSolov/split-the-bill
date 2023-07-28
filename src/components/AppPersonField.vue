@@ -2,7 +2,10 @@
     import { useBillStore } from '../store/bill'
     import { UserOutlined, DeleteOutlined } from '@ant-design/icons-vue'
 
-    const { person, index } = defineProps(['person', 'index']) 
+    const { person, index } = defineProps({ 
+        person: { type: Object, reqiured: true },
+        index: { type: Number, reqiured: true }
+    }) 
 
     const { deletePerson } = useBillStore()
 </script> 
